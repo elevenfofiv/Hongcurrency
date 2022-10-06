@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+  </head>
+  <body>
+    <header>
+      <h1>{{.PageTitle}}</h1>
+    </header>
+    <main>
+    {{range .Blocks}}
+      <div>
+        <ul>
+          <li>{{.Data}}</li>
+          <li>{{.Hash}}</li>
+          {{if .PrevHash}}
+            <li>{{.PrevHash}}</li>
+          {{end}}
+        </ul>
+      </div>
+      <hr />
+    {{end}}
+    </main>
+  </body>
+</html>
