@@ -17,7 +17,7 @@ type homeData struct {
 const port string = ":4000"
 
 func home(rw http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("templates/home.gohtml"))
+	tmpl := template.Must(template.ParseFiles("templates/pages/home.gohtml"))
 	data := homeData{"Home", blockchain.GetBlockchain().AllBlocks()}
 	tmpl.Execute(rw, data)
 }
